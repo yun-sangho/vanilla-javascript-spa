@@ -1,0 +1,24 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#header {
+  background-color: darkgrey;
+  height: 100px;
+  line-height: 100px;
+}
+
+#content {
+  background-color: beige;
+  height: calc(100% - 200px);
+}
+
+#footer {
+  background-color: dimgrey;
+  height: 100px;
+  line-height: 100px;
+}

@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+package-lock.json
+coverage
+.nyc_output
+.cache
+dist
+lib
+.vscode/
+*.min.js
+# Logs
+logs
+*.log
+npm-debug.log*
+tmp
