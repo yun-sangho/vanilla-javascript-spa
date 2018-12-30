@@ -1,5 +1,5 @@
 let Error404 = {
-  render: async () => {
+  render: () => {
     let view = /*html*/ `
             <div name="404">
                 <h1>Page not found</h1>

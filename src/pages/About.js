@@ -1,5 +1,5 @@
 let About = {
-  render: async () => {
+  render: () => {
     let view = /*html*/ `
               <div name="about">
                   <h1> About </h1>

@@ -1,7 +1,8 @@
-import Home from "./views/Home";
-import About from "./views/About";
-import Error404 from "./views/Error404";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Error404 from "./pages/Error404";
 
+let contentDiv = document.getElementById("content")
 //
 const routes = {
   "/": Home,
@@ -9,19 +10,19 @@ const routes = {
 };
 
 // figure out which content is rendered.
-const router = async () => {
-  let contentDiv = document.getElementById("content");
+// const router = async () => {
+//   let requestedPath = window.location.pathname;
+//   let requestedPage = routes[requestedPath] ? routes[requestedPath] : Error404;
+//   console.log("router works")
+//   contentDiv.innerHTML = await requestedPage.render();
+//   await requestedPage.after_render()
+//   history.pushState(null, '', requestedPath);
+// };
 
-  let requestedURL = window.location.pathname;
-  let requestedPage = routes[requestedURL] ? routes[requestedURL] : Error404;
+// window.onpopstate= () => {
+//   router()
+// }
 
-  contentDiv.innerHTML = await requestedPage.render();
-  await requestedPage.after_render()
-  history.pushState({}, '', requestedURL);
-};
-
-window.onpopstate = () => {
-  router();
-};
-
-router()
+let requestedPath = window.location.pathname;
+let requestedPage = routes[requestedPath] ? routes[requestedPath] : Error404;
+contentDiv.innerHTML = requestedPage.render();
