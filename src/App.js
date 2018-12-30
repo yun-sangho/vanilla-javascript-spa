@@ -16,11 +16,12 @@ const router = async () => {
   let requestedPage = routes[requestedURL] ? routes[requestedURL] : Error404;
 
   contentDiv.innerHTML = await requestedPage.render();
-  await page.after_render();
-
-  history.pushState(null);
+  await requestedPage.after_render()
+  history.pushState({}, '', requestedURL);
 };
 
 window.onpopstate = () => {
   router();
 };
+
+router()
